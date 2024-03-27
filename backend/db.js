@@ -13,8 +13,16 @@ const mongoDb = async () => {
         // Use Mongoose's find() method to fetch all documents from the collection
         const fetchedData = await FoodItem.find({});
         
+        const foodCategory = mongoose.model('foodCategory', new mongoose.Schema({}), 'foodCategory');
+        const catData = await foodCategory.find({});
+
+        global.food_items = fetchedData;
+        global.foodCategory = catData;
+
         // Output the fetched data
        // console.log('Fetched data:', fetchedData);
+       //global.food_items = fetchedData;
+       //console.log(global.food_items)
     } catch (error) {
         console.error('Error connecting to MongoDB:', error.message);
     }

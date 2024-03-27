@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {  useState } from "react";
 
 export default function Carousel() {
+  
   return (
     <div>
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
